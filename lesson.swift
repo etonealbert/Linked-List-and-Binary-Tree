@@ -27,7 +27,7 @@ extension LinkedList: Sequence {
 struct LinkedListIterator<T>: IteratorProtocol {
     var current: LinkedListNode<T>
     
-    mutating func next() -> T? {
+    mutating func next() -> T? {          // перебираем и смотрим что за элемент
         switch current {
         case let .value(element, next):
             current = next
