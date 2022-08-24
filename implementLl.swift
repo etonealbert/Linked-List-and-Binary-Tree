@@ -13,7 +13,11 @@ class LinkedList{   //we using it instead struct, because struct is hard to foll
 
     var head: Node?
 
-    func insert() {  }
+    func insert(value: Int) {
+        if head == nil {
+            
+        }
+      }
 
     func displayListItems () {
 
