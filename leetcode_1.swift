@@ -3,13 +3,9 @@
   public class ListNode {
       public var val: Int
       public var next: ListNode?
-      init(val: Int, next: ListNode?){
-        self.val = val
-        self.next = next 
-    }
-    //   public init() { self.val = 0; self.next = nil; }
-    //   public init(_ val: Int) { self.val = val; self.next = nil; }
-    //   public init(_ val: Int, _ next: ListNode?) { self.val = val; self.next = next; }
+      public init() { self.val = 0; self.next = nil; }
+      public init(_ val: Int) { self.val = val; self.next = nil; }
+      public init(_ val: Int, _ next: ListNode?) { self.val = val; self.next = next; }
   }
  
 class Solution {
@@ -17,44 +13,50 @@ class Solution {
     var head: ListNode?
 
     func setupDummyNodes() -> ListNode? {
-        let three = ListNode(val: 3, next: nil)
-        let two = ListNode(val: 2, next: three)
-        head = ListNode(val: 1, next: two)
+        let four = ListNode( 1,  nil)
+        let three = ListNode( 2,  four)
+        let two = ListNode(2,  three)
+        head = ListNode( 1,  two)
         return head
     }
 
+    func displayListItems (_ head: ListNode?) {
+
+        print("Here is whats inside of your list:")
+
+        var current = head
+
+        while current != nil {
+            print(current?.val ?? "")
+            current = current?.next
+        }
+
+    }
+
     func isPalindrome(_ head: ListNode?) -> Bool {
+        let kek : ListNode? = head
+        var curr = head
+        var arr : [Int] = []
 
-
-
-        
-        
-        let kek = head
-        var curr: ListNode? = head
-        var temp: ListNode?
         
         while curr != nil {
-            let second : ListNode? = curr!.next
-            curr!.next = temp
-            temp = curr
-            curr = second
+            arr.append(curr!.val)
+            curr = curr?.next
+        } 
+        print(arr)
+        if arr.count % 2 != 0 {
+            return false
+        }
+        for i in 0...(arr.count/2-1){
+            if arr[i] != arr[arr.count-1-i]{
+                return false
+            }
         }
         
-        // while kek != nil{
-        //     var com1 = kek?.val 
-        //     var com2 = temp?.val
-        //     if com1 != com2 {
-        //         return false
-        //     }
-        //     kek = kek?.next
-        //     temp = temp?.next
-        // }
-
-        print(temp!.val == kek!.val)
-        
-        return (temp!.val == kek!.val)
+        return true
     }
 }
 let sample = Solution()
 let kek = sample.setupDummyNodes()
+sample.displayListItems(kek)
 print(sample.isPalindrome(kek))
