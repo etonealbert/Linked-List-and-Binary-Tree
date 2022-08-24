@@ -13,9 +13,20 @@ class LinkedList{   //we using it instead struct, because struct is hard to foll
 
     var head: Node?
 
-    func insert() {
+    func insert() {  }
 
-    }
+    func displayListItems () {
+
+        print("Here is whats inside of your list:")
+
+        var current = head
+
+        while current != nil {
+            print(current?.value ?? "")
+            current = current?.next
+        }
+
+    }// For interview requierd
 
     func setupDummyNodes() {
         let three = Node(value: 3, next: nil)
@@ -27,4 +38,7 @@ class LinkedList{   //we using it instead struct, because struct is hard to foll
 
 let sampleList = LinkedList()
 sampleList.setupDummyNodes()
-print(sampleList.head?.value)
+
+sampleList.displayListItems()
+
+// print(sampleList.head?.value)
