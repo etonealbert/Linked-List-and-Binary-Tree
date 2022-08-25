@@ -34,7 +34,7 @@ class Solution {
     }
 
     func isPalindrome(_ head: ListNode?) -> Bool {
-        let kek : ListNode? = head
+        
         var curr = head
         var arr : [Int] = []
 
@@ -43,17 +43,25 @@ class Solution {
             arr.append(curr!.val)
             curr = curr?.next
         } 
-        print(arr)
-        if arr.count % 2 != 0 {
-            return false
+        if arr.count == 1 {
+            return true
         }
-        for i in 0...(arr.count/2-1){
+        if arr.count % 2 != 0{
+            for i in 0...((arr.count+1)/2-2){
             if arr[i] != arr[arr.count-1-i]{
                 return false
+            }
+        } }else{
+            for i in 0...(arr.count/2-1){
+                if arr[i] != arr[arr.count-1-i]{
+                    return false
+                }
             }
         }
         
         return true
+    
+
     }
 }
 let sample = Solution()
