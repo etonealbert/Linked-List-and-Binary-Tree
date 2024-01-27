@@ -1,0 +1,17 @@
+# Ignore compiled class files
+*.class
+
+# Ignore the build directory (if your development environment creates it)
+/build/
+
+# Ignore the target directory (for projects using Maven)
+/target/
+
+# Ignore IDE configuration files (e.g., IntelliJ IDEA or Eclipse)
+.idea/
+.eclipse/
+
+# Ignore temporary storage files (e.g., .DS_Store files on macOS)
+.DS_Store
+Thumbs.db
+
