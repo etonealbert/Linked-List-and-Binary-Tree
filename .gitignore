@@ -3,15 +3,34 @@
 
 # Ignore the build directory (if your development environment creates it)
 /build/
+/bin/
 
-# Ignore the target directory (for projects using Maven)
+# Ignore the Gradle build directory (if you're using Gradle)
+.gradle/
+
+# Ignore the Maven target directory (if you're using Maven)
 /target/
 
 # Ignore IDE configuration files (e.g., IntelliJ IDEA or Eclipse)
 .idea/
 .eclipse/
+.vscode/
+
+# Ignore Kotlin-specific generated files
+*.iml
+.idea_modules/
+build.gradle
+build/
+out/
+
+# Ignore Gradle wrapper files (if you're using Gradle)
+gradle-wrapper.properties
+gradle-wrapper.jar
 
 # Ignore temporary storage files (e.g., .DS_Store files on macOS)
 .DS_Store
 Thumbs.db
+
+# Ignore JAR files
+*.jar
 
